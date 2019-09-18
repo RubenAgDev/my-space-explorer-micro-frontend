@@ -58,10 +58,12 @@ function IsLoggedIn() {
 }
 
 injectStyles();
-ReactDOM.render(
 
-  <ApolloProvider client={client}>
-    <IsLoggedIn />
-  </ApolloProvider>,
-  document.getElementById('root'),
-);
+window.renderMySpaceExplorer = (docElementId) => {
+  ReactDOM.render(
+    <ApolloProvider client={client}>
+      <IsLoggedIn />
+    </ApolloProvider>,
+    document.getElementById(docElementId),
+  );
+};
