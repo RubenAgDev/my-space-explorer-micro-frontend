@@ -19,9 +19,9 @@
     "serve": "^11.1.0"
   },
   "scripts": {
-    "serve": "cd build && serve",
+    "serve": "serve --config serve.config.json",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node genMFManifest",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "run:ios-demo": "npx artillery run apollo-internal-demos/ios-workload.yml"
