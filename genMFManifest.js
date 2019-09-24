@@ -37,7 +37,7 @@ fs.readFile(indexFilePath, 'utf8', (err, htmlData) => {
   // NOTE: if you want to include the paths that don't exist in `build/asset-manifest.json` leave out `filterAssetManifestPaths(css/js)`.
   const assets = {
     css: Array.isArray(css) ? filterAssetManifestPaths(css) : [],
-    js: Array.isArray(js) ? filterAssetManifestPaths(js) : [],
+    js: Array.isArray(js) ? [assetManifest['runtime~main.js'], ...filterAssetManifestPaths(js)] : [],
   }
 
   fs.writeFileSync(BUILD_PATH, JSON.stringify(assets))
