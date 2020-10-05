@@ -21,7 +21,7 @@
   "scripts": {
     "serve": "serve --config serve.config.json",
     "start": "react-scripts start",
-    "build": "react-scripts build && node genMFManifest",
+    "build": "react-scripts build && node scripts/genMicroFrontendManifest",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "run:ios-demo": "npx artillery run apollo-internal-demos/ios-workload.yml"
