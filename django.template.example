@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Micro Frontend Container</title>
+    <link rel="shortcut icon" href="{{ micro_frontend_url }}/favicon.ico" />
+    {% for css in css_files %}
+        <link rel="stylesheet" href="{{ css }}" />
+    {% endfor %}
+    {% for js in js_files %}
+        <script type="text/javascript" src="{{ js }}"></script>
+    {% endfor %}
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="micro-frontend-container" class="container"></div>
+    {{ render_options|json_script:"micro-frontend-render-options" }}
+    <script type="text/javascript">
+      window.onload = function(event) {
+        // These global functions are attached to window by the above scripts
+        var microFrontends = {
+          "id": window.renderMicroFrontend,
+        };
+        // Options are rendered by the template
+        microFrontends["{{ micro_frontend_id }}"]("micro-frontend-container",
+          JSON.parse(document.getElementById("micro-frontend-render-options").textContent));
+      };
+    </script>
+  </body>
+</html>
