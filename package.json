@@ -15,7 +15,7 @@
     "react": "^16.9.0-alpha.0",
     "react-dom": "^16.9.0-alpha.0",
     "react-emotion": "^9.2.12",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "serve": "^11.1.0"
   },
   "scripts": {
@@ -40,6 +40,6 @@
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.7",
     "apollo": "^2.16.3",
-    "artillery": "^1.6.0-26"
+    "artillery": "^1.7.9"
   }
 }
